@@ -69,8 +69,8 @@ public class PointerClick : MonoBehaviour
     //Will be called when Slider changes
     void sliderCallBack(float value)
     {
-    Debug.Log("Slider Changed: " + value);
-    slider.GetComponentInChildren<Image>().color = Color.cyan;
+    //Debug.Log("Slider Changed: " + value);
+    //slider.GetComponentInChildren<Image>().color = Color.cyan;
     slider.GetComponentInChildren<MeshRenderer>().material.color = Color.yellow;
     }
 

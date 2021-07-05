@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 4405693992988843771}
   m_Layer: 5
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: SliCyl
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
