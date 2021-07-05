@@ -6,17 +6,29 @@ using UnityEngine.UI;
 
 public class PointerClick : MonoBehaviour
 {
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
+    public Slider slider;
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+    void OnEnable()
+    {
+    //Subscribe to the Slider Click event
+    slider.onValueChanged.AddListener(delegate { sliderCallBack(slider.value); });
+    }
+
+    //Will be called when Slider changes
+    void sliderCallBack(float value)
+    {
+    //Debug.Log("Slider Changed: " + value);
+    //slider.GetComponentInChildren<Image>().color = Color.cyan;
+    slider.GetComponentInChildren<MeshRenderer>().material.color = Color.yellow;  
+    }  
+    void OnDisable()
+    {
+    //Un-Subscribe To Slider Event
+    slider.onValueChanged.RemoveListener(delegate { sliderCallBack(slider.value); });
+    }
+
+
+
 
     // public void OnBeginDrag(PointerEventData eventData)
     // {
@@ -58,27 +70,7 @@ public class PointerClick : MonoBehaviour
     //     Debug.Log("Mouse Up");
     // }
 
-    public Slider slider;
-    private bool change = false;
-
-    void OnEnable()
-    {
-    //Subscribe to the Slider Click event
-    slider.onValueChanged.AddListener(delegate { sliderCallBack(slider.value); });
-    }
-
-    //Will be called when Slider changes
-    void sliderCallBack(float value)
-    {
-    //Debug.Log("Slider Changed: " + value);
-    //slider.GetComponentInChildren<Image>().color = Color.cyan;
-    slider.GetComponentInChildren<MeshRenderer>().material.color = Color.yellow;  
-    }  
-    void OnDisable()
-    {
-    //Un-Subscribe To Slider Event
-    slider.onValueChanged.RemoveListener(delegate { sliderCallBack(slider.value); });
-    }
+    
 
     // public void OnPointerDown(PointerEventData eventData)
     // {
