@@ -59,6 +59,7 @@ public class PointerClick : MonoBehaviour
     // }
 
     public Slider slider;
+    private bool change = false;
 
     void OnEnable()
     {
@@ -71,9 +72,8 @@ public class PointerClick : MonoBehaviour
     {
     //Debug.Log("Slider Changed: " + value);
     //slider.GetComponentInChildren<Image>().color = Color.cyan;
-    slider.GetComponentInChildren<MeshRenderer>().material.color = Color.yellow;
-    }
-
+    slider.GetComponentInChildren<MeshRenderer>().material.color = Color.yellow;  
+    }  
     void OnDisable()
     {
     //Un-Subscribe To Slider Event

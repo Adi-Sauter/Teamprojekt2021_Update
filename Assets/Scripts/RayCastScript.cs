@@ -12,10 +12,11 @@ public class RayCastScript : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if(Physics.Raycast(ray, out hit, 100.0f))
+            if(Physics.Raycast(ray, out hit, 10.0f))
             {
                 if(hit.transform)
                 {
+                    PrintName(hit.transform.gameObject);
                     CurrentClickedGameObject(hit.transform.gameObject);
                 }   
             }
@@ -26,5 +27,9 @@ public class RayCastScript : MonoBehaviour
     {
         if(go.tag == "SliCyl")
         go.GetComponent<MeshRenderer>().material.color = Color.yellow;
+    }
+    private void PrintName(GameObject go)
+    {
+        Debug.Log(go.name);
     }
 }
