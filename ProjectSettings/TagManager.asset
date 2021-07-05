@@ -18,6 +18,7 @@ TagManager:
   - Slider Growth (Economic)
   - Slider Growth (Population)
   - Slider Emission (Methane And Others)
+  - SliCyl
   layers:
   - Default
   - TransparentFX

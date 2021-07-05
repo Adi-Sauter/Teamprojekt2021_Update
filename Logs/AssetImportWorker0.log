@@ -363,3 +363,31 @@ System memory in use after: 162.1 MB.
 Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2008.
 Total: 2.974221 ms (FindLiveObjects: 0.294246 ms CreateObjectMapping: 0.100404 ms MarkObjects: 2.553115 ms  DeleteObjects: 0.024611 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007408 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.346 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1509 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 162.4 MB.
+System memory in use after: 162.5 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2011.
+Total: 2.620299 ms (FindLiveObjects: 0.261782 ms CreateObjectMapping: 0.061078 ms MarkObjects: 2.220240 ms  DeleteObjects: 0.075878 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 169.721433 seconds.
+  path: Assets/Mezanix/RealisticWoodTextures/0_0_Textures/Interior_Wood_1/Materials/Interior_Wood_1_basecolor_MinColorIntensity_MinLightness.mat
+  artifactKey: Guid(7c471337ec1659946ab9cc546d0dfb3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mezanix/RealisticWoodTextures/0_0_Textures/Interior_Wood_1/Materials/Interior_Wood_1_basecolor_MinColorIntensity_MinLightness.mat using Guid(7c471337ec1659946ab9cc546d0dfb3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68bd6d4ac4adf1ed3cfba39df1f2429d') in 0.303826 seconds
+  Import took 0.309398 seconds .
+
