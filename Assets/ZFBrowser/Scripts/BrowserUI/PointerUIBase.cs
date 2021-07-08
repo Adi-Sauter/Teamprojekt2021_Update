@@ -330,8 +330,8 @@ public abstract class PointerUIBase : MonoBehaviour, IBrowserUI {
 	[Tooltip("Disable Input.simulateMouseWithTouches globally. This will prevent touches from appearing as mouse events.")]
 	public bool disableMouseEmulation = false;
 
-    private MouseClickRobot currentProxy;
-    private MouseClickRobot.PROXY_TYPE relevantProxyType = MouseClickRobot.PROXY_TYPE.NONE;
+    private MouseClickRobot currentProxy; 
+    public MouseClickRobot.PROXY_TYPE relevantProxyType = MouseClickRobot.PROXY_TYPE.NONE; 
     private int proxystate = 0;
 
 	protected virtual void OnHandlePointers() {
@@ -349,13 +349,23 @@ public abstract class PointerUIBase : MonoBehaviour, IBrowserUI {
 			if (enableVRInput) FeedVRPointers();
 		#endif
 
+
         if (Input.GetKeyUp(KeyCode.S))
         {
             this.relevantProxyType = MouseClickRobot.PROXY_TYPE.INITIAL;
+		} 
+		else if (Input.GetKeyUp(KeyCode.G)) {
 
-		} else if (Input.GetKeyUp(KeyCode.G)) {
+			if(MouseClickRobot.proxyType == MouseClickRobot.PROXY_TYPE.TRANSPORT_EFFIC) {
 
-			this.relevantProxyType = MouseClickRobot.PROXY_TYPE.TRANSPORT_ELEC;
+				this.relevantProxyType = MouseClickRobot.PROXY_TYPE.TRANSPORT_EFFIC; 
+
+			} else if (MouseClickRobot.proxyType == MouseClickRobot.PROXY_TYPE.TRANSPORT_ELEC) {
+
+				this.relevantProxyType = MouseClickRobot.PROXY_TYPE.TRANSPORT_ELEC; 
+			}
+
+		} /*else if (Input.GetKeyUp(KeyCode.Q)) {
 			this.relevantProxyType = MouseClickRobot.PROXY_TYPE.TRANSPORT_EFFIC;
 			/*
 			this.relevantProxyType = MouseClickRobot.PROXY_TYPE.ENERGY_COAL;
@@ -364,9 +374,9 @@ public abstract class PointerUIBase : MonoBehaviour, IBrowserUI {
 			this.relevantProxyType = MouseClickRobot.PROXY_TYPE.ENERGY_CARBON;
 			this.relevantProxyType = MouseClickRobot.PROXY_TYPE.BUILDING_ENERGY;
 			this.relevantProxyType = MouseClickRobot.PROXY_TYPE.GROWTH_ECONOMIC;
-			this.relevantProxyType = MouseClickRobot.PROXY_TYPE.GROWTH_POPULATION;
-			*/
-        }
+			this.relevantProxyType = MouseClickRobot.PROXY_TYPE.GROWTH_POPULATION;	
+        } 
+		*/
 
         if (this.proxystate == 1)
         {

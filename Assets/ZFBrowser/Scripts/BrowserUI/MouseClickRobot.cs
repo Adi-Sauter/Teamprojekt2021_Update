@@ -29,6 +29,9 @@ public class MouseClickRobot : MonoBehaviour
 
     private float initialX;
 
+    public PointerUIBase BrowserProxy;
+
+
     void Start()
     {
         this.initialX = this.transform.localPosition.x;
@@ -85,11 +88,15 @@ public class MouseClickRobot : MonoBehaviour
         }
     }
 
+    public PROXY_TYPE NewVarialble;
+
     public void setPercentageNew(float percentage, MouseClickRobot.PROXY_TYPE type) 
     {
         if(this.proxyType == type)
         {
             this.setPercentage(percentage);
+            //this.BrowserProxy = new PointerUIBase();
+            //this.PointerUIBase.relevantProxyType = (PointerUIBase)type;
         }
     }
 }
